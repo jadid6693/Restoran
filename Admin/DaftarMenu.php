@@ -19,7 +19,7 @@
 								$row["JudulMenu"],
 								$row["Harga"],
 								$row["NamaGambar"],
-								$row["Status"]);
+								$row["status"]);
 		}
 	}
 	else{
@@ -52,7 +52,7 @@
 				<th>Harga</th>
 				<th>Gambar</th>
 				<th>Status</th>
-				<th>Aksi</th>
+				<th colspan="2">Aksi</th>
 			</tr>
 			<?php
 			for($i=0;$i<count($arr_menu);$i++){
@@ -61,10 +61,10 @@
 				echo "<td>".$arr_menu[$i][0]."</td>";
 				echo "<td>".$arr_menu[$i][1]."</td>";
 				echo "<td>".$arr_menu[$i][2]."</td>";
-				echo "<td>".$arr_menu[$i][3]."</td>";
-				echo "<td style='text-align:center;'><img src='../menu/".$arr_menu[$i][4].".jpg' width='100px'/></td>";
+				echo "<td>Rp. ".number_format($arr_menu[$i][3])."</td>";
+				echo "<td style='text-align:center;'><img src='../menu/".$arr_menu[$i][4]."' width='100px'/></td>";
 				echo "<td>".$arr_menu[$i][5]."</td>";
-				echo "<td><a href='editmenu.php?id=".$arr_menu[$i][0]."'>EDIT</a>&nbsp;|&nbsp;<a href='hapusmenu.php?id=".$arr_menu[$i][0]."'>HAPUS</a></td>";
+				echo "<td><a href='editmenu.php?idmen=".$arr_menu[$i][0]."'>EDIT</a>&nbsp;</td><td>&nbsp;<a href='hapusmenu.php?idmen=".$arr_menu[$i][0]."'>HAPUS</a></td>";
 				//echo "<td><a href='detail.php?id=".$arr_barang[$i][0]."'>beli</a></td>";
 				echo "</tr>";
 			}

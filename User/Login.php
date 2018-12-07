@@ -25,22 +25,18 @@
 		</style>
 	</head>
 	<body>
-		<h2 align="center">Halaman Login</h2>
+		<h3 align="center">Halaman Login</h3>
 		<span id="pesan"><?php echo $pesn?></span>
-		<div style="width:50%;height:400px;margin:auto;text-align:center;">
-			<form name="form1" method="post" action="ceklogin.php">
-			
-		  	
-				<fieldset style="width:50%;height:200px;margin:auto;background-color:C1E8B7;text-align:left;"><legend>Login User</legend>
-				<label style="font-size:15pt;">Nama User Login: </label><input type="text" value="" placeholder="Nama" name="nmaUserLgn_txt" size="15" style="font-size:15pt;"required /><br><br>
-				<label style="font-size:15pt;">Password : </label><input type="password" value="" placeholder="Password" name="passUser_pass" size="15" style="font-size:15pt;" required /><br><br>
-				<input type="submit" value="Login User" name="lgn_btn" size="15" style="font-size:15pt;"/>&nbsp;&nbsp;<input type="reset" value="Reset" name="rst_btn" size="15"style="font-size:15pt;"/>
-				</fieldset>
-				
-			</form>
-			<form method="post" action="registerUser.php">
-				<input type="submit" value="Register" name="regis_btn" size="15" style="font-size:15pt;"/>
-			</form>
-		</div>
+		<a href="../index.php">Kembali</a>
+		<form name="form1" method="post" action="ceklogin.php">
+			<fieldset><legend>Login User</legend>
+			<label>Nama User Login: </label><input type="text" value="" placeholder="Nama" name="nmaUserLgn_txt" size="15" required /><br><br>
+			<label>Password : </label><input type="password" value="" placeholder="Password" name="passUser_pass" size="15" required /><br><br>
+			<input type="submit" value="Login User" name="lgn_btn" size="10"/>&nbsp;&nbsp;<input type="reset" value="Reset" name="rst_btn" size="10"/>
+			</fieldset>
+		</form>
+		<form method="post" action="registerUser.php">
+			<input type="submit" value="Register" name="regis_btn" size="10"/>
+		</form>
 	</body>
 </html>

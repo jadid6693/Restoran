@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 07, 2018 at 01:56 AM
+-- Generation Time: Dec 07, 2018 at 07:09 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -108,6 +108,14 @@ CREATE TABLE `menu` (
   `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `menu`
+--
+
+INSERT INTO `menu` (`IdMenu`, `IdJenis`, `JudulMenu`, `Harga`, `NamaGambar`, `status`) VALUES
+(1, 1, 'Ayam Bakar', 250000, 'ayam-bakar.jpg', 1),
+(2, 1, 'Bakso', 20000, 'bakso.jpg', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -204,7 +212,7 @@ ALTER TABLE `jenis`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `IdMenu` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `IdMenu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user`

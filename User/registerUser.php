@@ -107,10 +107,38 @@
 	<body>
 		<?php echo $hasil;?>
 		<a href="../index.php">Kembali Ke Utama</a>
-		<h3 align="center">Halaman Register</h3>
-		
+		<h3 align="center">List User kami</h3>
+		<table border="1" style="margin-left:auto;margin-right:auto;width:800px;">
+			<tr>
+				<th>Id User</th>
+				<th>Nama User Login</th>
+				<th>Nama User</th>
+				<th>Password User</th>
+				<th>Jenis Kelamin</th>
+				<th>NoTelp</th>
+				<th>Alamat</th>
+				<th>Tanggal Lahir</th>
+			</tr>
+			<?php
+			for($i=0;$i<count($arr_user);$i++){
+				echo "<tr>";
+				//echo "<td style='text-align:center;'><img src='images/".$arr_barang[$i][0].".jpg' width='100px'/></td>";
+				echo "<td>".$arr_user[$i][0]."</td>";
+				echo "<td>".$arr_user[$i][1]."</td>";
+				echo "<td>".$arr_user[$i][2]."</td>";
+				echo "<td>".$arr_user[$i][3]."</td>";
+				echo "<td>".$arr_user[$i][4]."</td>";
+				echo "<td>".$arr_user[$i][5]."</td>";
+				echo "<td>".$arr_user[$i][6]."</td>";
+				echo "<td>".$arr_user[$i][7]."</td>";
+				//echo "<td><a href='detail.php?id=".$arr_barang[$i][0]."'>beli</a></td>";
+				echo "</tr>";
+			}
+			?>
+			
+		</table>
 		<form method="post">
-			<fieldset style="width:30%;height:400px;margin:auto;background-color:C9FCFF;"><legend>Register User</legend>
+			<fieldset><legend>Register User</legend>
 			<?php echo "<label> Id User : </label>".$IdUser."<br><br>";?>
 			<label> Nama User Login : </label><span id="nmUsrLgn"></span><input type="hidden" name="nmUsrLgn_txt" value=""/><br><br>
 			<label>Nama : </label><input type="text" value="" onkeyup="isi(this.value)" placeholder="Nama" name="nmaUser_txt" size="15" required /><br><br>

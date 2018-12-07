@@ -1,3 +1,21 @@
+<?php
+	session_start();
+	include("koneksi.php");
+	
+	$sql = "SELECT * FROM menu";
+	$result = $conn->query($sql);
+	
+	$arr_menu=[];
+	if ($result->num_rows > 0) {
+    // output data of each row
+		while($row = $result->fetch_assoc()) {
+			$arr_menu[]=array($row['IdMenu'],$row['IdJenis'],$row['JudulMenu'],$row['Harga'],$row['NamaGambar'],$row['status']);
+		}
+	} else {
+		echo "0 results";
+	}
+	$conn->close();
+?>
 <html>
 	<head> <title>RestOn</title> 
 	
@@ -12,7 +30,7 @@
 			</div>
 			
 			<div style="background-color:4190B6;width:50%;height:100px;float:left;">
-				<input type="button" value="Login" name="login_btn" style="width:100px;height:50px;font-size:15pt;position:relative;float:right;margin-top:25px;margin-right:10px;background-color:41C1B6;color:white">
+				<a href="User/login.php" ><input type="button" value="Login" name="login_btn" style="width:100px;height:50px;font-size:15pt;position:relative;float:right;margin-top:25px;margin-right:10px;background-color:41C1B6;color:white"></a>
 			</div>
 			
 		</div>
@@ -38,26 +56,16 @@
 		</div>
 		<div style="width:100%;">
 				
-					<div style="background-color:E8DDD2;width:20%;float:left;height:300px;text-align:right;margin-top:5px;">
+					<?php
+					for($i=0;$i<count($arr_menu);$i++){
+					echo "<div style='background-color:E8DDD2;width:20%;float:left;height:300px;text-align:right;margin-top:5px;'>";
 						
-							<img src="menu/kare-seafood.jpg" style="width:270px;height:170px;margin-top:30px;margin-right:30px;margin-left:10px;"/>
-							<p>abcdefg</p>
-					</div>
+					echo "<img src='menu/".$arr_menu[$i][4]."'   style='width:270px;height:170px;margin-top:30px;margin-right:30px;margin-left:10px;'/>";
+					echo		"<h3 style='text-align:center;'>".$arr_menu[$i][2]."</h3><p style='text-align:center;'>Rp. ".number_format($arr_menu[$i][3])."</p>";
+					echo "</div>";
+					}
 					
-					<div style="background-color:E8DDD2;width:20%;float:left;height:300px;text-align:right;margin-top:5px;">
-							<img src="menu/kare-seafood.jpg" style="width:270px;height:170px;margin-top:30px;margin-right:30px;"/>
-					</div>
-					
-					<div style="background-color:E8DDD2;width:20%;float:left;height:300px;text-align:right;margin-top:5px;">
-							<img src="menu/kare-seafood.jpg" style="width:270px;height:170px;margin-top:30px;margin-right:30px;"/>
-					</div>
-					<div style="background-color:E8DDD2;width:20%;float:left;height:300px;text-align:right;margin-top:5px;">
-							<img src="menu/kare-seafood.jpg" style="width:270px;height:170px;margin-top:30px;margin-right:30px;"/>
-					</div>
-					<div style="background-color:E8DDD2;width:20%;float:left;height:300px;text-align:right;margin-top:5px;">
-							<img src="menu/kare-seafood.jpg" style="width:270px;height:170px;margin-top:30px;margin-right:30px;"/>
-					</div>
-					
+					?>
 					
 		</div>
 		
