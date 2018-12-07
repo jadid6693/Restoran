@@ -3,6 +3,7 @@
 	session_start();
 	include("../koneksi.php");//c1748cef0ad084aa2265c358957bbfe6 -> md5=restosuper
 	
+	
 	if(isset($_SESSION['AdminLogin'])){
 		if(isset($_POST['lgn_btn'])){
 			if(isset($_POST['nmaAdminLgn_txt']) && isset($_POST['passAdmin_pass']) && $_POST['nmaAdminLgn_txt'] !="" && $_POST['passAdmin_pass'] !=""){
