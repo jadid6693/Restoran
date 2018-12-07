@@ -29,7 +29,7 @@
 ?>
 <html>
 	<head>
-		<title>P12 jualan baju</title>
+		<title>P12 Jualan Baju</title>
 	</head>
 	<body>
 		<a href="index.php">kembali</a>
